@@ -4,10 +4,11 @@ const supabaseUrl = process.env.SUPABASE_URL
 const supabaseKey = process.env.SUPABASE_KEY
 
 if (!supabaseUrl || !supabaseKey) {
-  console.error('Missing SUPABASE_URL or SUPABASE_KEY in .env')
-  process.exit(1)
+  console.error('Missing SUPABASE_URL or SUPABASE_KEY in environment')
 }
 
-const supabase = createClient(supabaseUrl, supabaseKey)
+const supabase = supabaseUrl && supabaseKey
+  ? createClient(supabaseUrl, supabaseKey)
+  : null
 
 module.exports = supabase

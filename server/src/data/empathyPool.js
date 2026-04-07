@@ -35,4 +35,42 @@ const empathyPool = {
   ],
 }
 
-module.exports = empathyPool
+// Hindi responses
+const hindiPool = {
+  sad: [
+    "Main samajh sakti hoon. Jo tum mehsoos kar rahi ho, wo bilkul sahi hai. 💙",
+    "Ye bohot bhaari lag raha hai. Tumhe akele nahi uthana hai ye bojh.",
+    "Udaas hona galat nahi hai. Tumhe theek na hone ka poora haq hai.",
+    "Main yahan hoon. Apna time lo. 🤍",
+    "Kabhi kabhi udaasi ko bas jagah chahiye. Main yahan hoon tumhare saath.",
+  ],
+  angry: [
+    "Ye sach mein bohot frustrating lagta hai. Tumhari feelings bilkul sahi hain.",
+    "Gussa hona theek hai. Yahan sab nikal do — ye tumhari safe jagah hai.",
+    "Tumhe pareshaan hone ka poora haq hai.",
+    "Main samajh sakti hoon ye frustration. Koi bhi pareshaan hota.",
+    "Tumhara gussa valid hai. Ise dabane ki zaroorat nahi. 💜",
+  ],
+  anxious: [
+    "Mere saath ek deep breath lo. Tum abhi safe ho. 🌸",
+    "Chinta karna kamzori nahi hai — iska matlab hai tum bohot care karti ho.",
+    "Ek pal, ek waqt. Sab kuch abhi samajhna zaroori nahi.",
+    "Ye bohot overwhelming lag raha hai. Chalo bas saath mein baithe hain.",
+    "Tum is feeling mein akeli nahi ho. Main yahan hoon.",
+  ],
+  neutral: [
+    "Main sun rahi hoon. Jab dil kare tab batao. 💬",
+    "Batane ke liye shukriya.",
+    "Main yahan hoon. Koi jaldi nahi, koi judgment nahi.",
+    "Jo bhi kehna hai, main sun rahi hoon.",
+    "Apna time lo. Ye jagah tumhari hai. 🤍",
+  ],
+  happy: [
+    "Ye sunke bohot khushi hui! Tum ye khushi deserve karti ho. 🌟",
+    "Bohot accha laga sunke. Is feeling ko sambhal ke rakhna!",
+    "Aaj tum halki lag rahi ho — ye sunke mujhe bhi khushi hui. 😊",
+    "Ise celebrate karo! Chhoti khushiyan bhi matter karti hain.",
+  ],
+}
+
+module.exports = { empathyPool, hindiPool }

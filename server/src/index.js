@@ -1,7 +1,9 @@
 const express = require('express')
 const cors = require('cors')
 const cookieParser = require('cookie-parser')
-require('dotenv').config()
+
+// Only load dotenv locally (Vercel injects env vars automatically)
+try { require('dotenv').config() } catch {}
 
 // Validate Supabase config on startup
 require('./config/db')
@@ -16,14 +18,8 @@ const challengeRoutes = require('./routes/challengeRoutes')
 
 const app = express()
 
-// Middleware
-const allowedOrigins = [
-  'http://localhost:5173',
-  process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null,
-  process.env.FRONTEND_URL,
-].filter(Boolean)
-
-app.use(cors({ origin: allowedOrigins, credentials: true }))
+// Middleware — allow all origins in production (single deployment serves both)
+app.use(cors({ origin: true, credentials: true }))
 app.use(express.json())
 app.use(cookieParser())
 app.use(anonymousId)
