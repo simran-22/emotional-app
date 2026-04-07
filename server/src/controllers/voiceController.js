@@ -1,4 +1,4 @@
-const { v4: uuidv4 } = require('uuid')
+const crypto = require('crypto')
 const supabase = require('../config/db')
 
 const BUCKET = 'voice-recordings'
@@ -9,7 +9,7 @@ exports.upload = async (req, res, next) => {
       return res.status(400).json({ message: 'No audio file provided' })
     }
 
-    const filename = `${uuidv4()}.webm`
+    const filename = `${crypto.randomUUID()}.webm`
 
     // Upload to Supabase Storage
     const { error: uploadErr } = await supabase.storage

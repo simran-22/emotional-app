@@ -1,4 +1,4 @@
-const { v4: uuidv4 } = require('uuid')
+const crypto = require('crypto')
 const supabase = require('../config/db')
 const { getPromptForRound } = require('../data/annoyancePool')
 
@@ -6,7 +6,7 @@ const { getPromptForRound } = require('../data/annoyancePool')
 const sessions = new Map()
 
 exports.start = (req, res) => {
-  const sessionId = uuidv4()
+  const sessionId = crypto.randomUUID()
   const firstPrompt = getPromptForRound(1)
 
   sessions.set(sessionId, {
